@@ -2,7 +2,8 @@
 version: "2.1"
 services:
   plex:
-    image: lscr.io/linuxserver/plex:latest
+    #image: lscr.io/linuxserver/plex:latest
+    image: plexinc/pms-docker
     restart: unless-stopped
     network_mode: host
     container_name: plex

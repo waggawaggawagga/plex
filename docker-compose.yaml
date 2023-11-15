@@ -1,0 +1,19 @@
+---
+version: "2.1"
+services:
+  plex:
+    image: lscr.io/linuxserver/plex:latest
+    restart: unless-stopped
+    network_mode: host
+    container_name: plex
+     
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Chicago
+      - PLEX_CLAIM=claim-gnRyZbvf8B_rdVSXP-2Z
+      - HOSTNAME=”PlexServer”
+
+    volumes:
+      - /mnt/docker_zvol/plex/config:/config
+      - /mnt/datadata:/datadata
